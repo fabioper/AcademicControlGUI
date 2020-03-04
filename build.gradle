@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'br.edu.infnet'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    compile 'org.openjfx:javafx-controls:11'
+    compile 'org.openjfx:javafx-fxml:14-ea+8'
+    compile 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+}
