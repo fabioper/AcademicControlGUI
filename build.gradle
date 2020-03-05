@@ -1,11 +1,12 @@
 plugins {
-    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
 group 'br.edu.infnet'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 8
+sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -15,11 +16,13 @@ test {
     useJUnitPlatform()
 }
 
-dependencies {
-    compile 'org.openjfx:javafx-controls:11'
-    compile 'org.openjfx:javafx-fxml:14-ea+8'
-    compile 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
 
+dependencies {
+    compile 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
 }

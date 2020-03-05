@@ -22,22 +22,20 @@ public final class StudentsRepository implements Repository<Student> {
 
     @Override
     public Collection<Student> getAll() {
-        return null;
+        return students;
     }
 
     @Override
     public Student getById(UUID id) {
-        for (Student student : this.students) {
-            if (student.getId() == id) {
-                return student;
-            }
-        }
+        for (Student student : this.students)
+            if (student.getId() == id) return student;
+
         return null;
     }
 
     @Override
-    public void add(Student entity) {
-        this.students.add(entity);
+    public void add(Student student) {
+        this.students.add(student);
     }
 
     @Override
