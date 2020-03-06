@@ -11,10 +11,10 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("views/Initial.fxml"));
-        var scene = new Scene(root, 600, 400);
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Initial.fxml"));
+        var scene = new Scene(root, 562, 267);
 
-        primaryStage.setTitle("Controle Acadêmico");
+        primaryStage.setTitle("Academic Control");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
