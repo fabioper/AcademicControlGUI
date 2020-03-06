@@ -21,6 +21,11 @@ javafx {
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
+sourceSets.main.resources {
+    srcDirs = ["src/main/java"]; //assume that your java classes are inside this path
+    exclude "**/*.java"
+}
+
 dependencies {
     compile 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
