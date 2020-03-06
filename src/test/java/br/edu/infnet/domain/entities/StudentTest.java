@@ -1,6 +1,6 @@
 package br.edu.infnet.domain.entities;
 
-import br.edu.infnet.domain.helpers.Result;
+import br.edu.infnet.domain.enums.Result;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

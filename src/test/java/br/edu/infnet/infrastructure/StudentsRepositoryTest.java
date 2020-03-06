@@ -1,7 +1,7 @@
 package br.edu.infnet.infrastructure;
 
 import br.edu.infnet.domain.entities.Student;
-import br.edu.infnet.domain.helpers.Repository;
+import br.edu.infnet.domain.interfaces.Repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

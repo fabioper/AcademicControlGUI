@@ -1,7 +1,6 @@
-package br.edu.infnet.domain.helpers;
+package br.edu.infnet.domain.interfaces;
 
 import br.edu.infnet.domain.entities.Entity;
-
 import java.util.Collection;
 import java.util.UUID;
 
