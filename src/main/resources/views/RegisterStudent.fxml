@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.infnet.ui.desktop.controllers.RegisterStudent">
    <children>
       <Label text="Registrar Aluno:">
          <VBox.margin>
@@ -41,7 +41,7 @@
             </VBox>
          </children>
       </HBox>
-      <Button fx:id="confirmButton" alignment="TOP_CENTER" defaultButton="true" mnemonicParsing="false" text="Registrar Estudante">
+      <Button fx:id="confirmButton" alignment="TOP_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#registerStudent" text="Registrar Estudante">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>

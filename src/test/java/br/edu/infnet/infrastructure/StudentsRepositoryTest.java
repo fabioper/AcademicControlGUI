@@ -5,6 +5,8 @@ import br.edu.infnet.domain.interfaces.Repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentsRepositoryTest {
@@ -13,12 +15,7 @@ class StudentsRepositoryTest {
     @BeforeEach
     void setUp() {
         repository = StudentsRepository.getInstance();
-        Student student = new Student("Student", 5.7, 7.1);
-        Student student1 = new Student("Student2", 9, 8.1);
-        Student student2 = new Student("Student3", 7.5, 10);
-        repository.add(student);
-        repository.add(student1);
-        repository.add(student2);
+        repository.clear();
     }
 
     @Test
@@ -30,8 +27,16 @@ class StudentsRepositoryTest {
 
     @Test
     void shouldReturnNumberOfRegisteredStudents() {
-        Student student = new Student("Student", 2.2, 9.7);
-        repository.add(student);
+        addStudents();
         assertEquals(4, repository.getSize());
+    }
+
+    private void addStudents() {
+        repository.addAll(
+            new Student("Student", 5.7, 7.1),
+            new Student("Student2", 9, 8.1),
+            new Student("Student3", 7.5, 10),
+            new Student("Student", 2.2, 9.7)
+        );
     }
 }

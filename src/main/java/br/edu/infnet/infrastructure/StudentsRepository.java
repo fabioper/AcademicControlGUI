@@ -17,7 +17,9 @@ public final class StudentsRepository implements Repository<Student> {
 
     public static StudentsRepository getInstance() {
         if (_instance != null) return _instance;
-        return new StudentsRepository();
+        _instance = new StudentsRepository();
+
+        return _instance;
     }
 
     @Override
@@ -41,5 +43,17 @@ public final class StudentsRepository implements Repository<Student> {
     @Override
     public int getSize() {
         return this.students.size();
+    }
+
+    @Override
+    public void addAll(Student... students) {
+        for (Student student : students) {
+            this.students.add(student);
+        }
+    }
+
+    @Override
+    public void clear() {
+        this.students.clear();
     }
 }

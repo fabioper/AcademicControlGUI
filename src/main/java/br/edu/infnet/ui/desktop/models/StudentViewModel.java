@@ -1,5 +1,7 @@
 package br.edu.infnet.ui.desktop.models;
 
+import java.text.DecimalFormat;
+
 public class StudentViewModel {
     private String name;
     private String firstGrade;
@@ -19,24 +21,24 @@ public class StudentViewModel {
         return firstGrade;
     }
 
-    public void setFirstGrade(String firstGrade) {
-        this.firstGrade = firstGrade;
+    public void setFirstGrade(double firstGrade) {
+        this.firstGrade = format(firstGrade);
     }
 
     public String getSecondGrade() {
         return secondGrade;
     }
 
-    public void setSecondGrade(String secondGrade) {
-        this.secondGrade = secondGrade;
+    public void setSecondGrade(double secondGrade) {
+        this.secondGrade = format(secondGrade);
     }
 
     public String getAverage() {
         return average;
     }
 
-    public void setAverage(String average) {
-        this.average = average;
+    public void setAverage(double average) {
+        this.average = format(average);
     }
 
     public String getResult() {
@@ -45,5 +47,10 @@ public class StudentViewModel {
 
     public void setResult(String result) {
         this.result = result;
+    }
+
+    private String format(double number) {
+        var formatter = new DecimalFormat("#.00");
+        return formatter.format(number);
     }
 }

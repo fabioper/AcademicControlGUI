@@ -7,9 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class RegisterStudent {
     private final Repository<Student> studentsRepository = StudentsRepository.getInstance();
+
     @FXML
     private TextField nameField;
 
@@ -24,9 +26,12 @@ public class RegisterStudent {
 
     @FXML
     void registerStudent(ActionEvent event) {
+        var stage = (Stage) confirmButton.getScene().getWindow();
         var name = nameField.getText();
         var firstGrade = Double.parseDouble(firstGradeField.getText());
         var secondGrade = Double.parseDouble(secondGradeField.getText());
         studentsRepository.add(new Student(name, firstGrade, secondGrade));
+
+        stage.close();
     }
 }
