@@ -54,7 +54,7 @@
    <top>
       <ButtonBar BorderPane.alignment="CENTER">
          <buttons>
-            <Button fx:id="registerStudentButton" mnemonicParsing="false" text="Cadastrar Estudante" />
+            <Button fx:id="registerStudentButton" mnemonicParsing="false" onAction="#openRegisterStudentScene" text="Cadastrar Estudante" />
          </buttons>
          <BorderPane.margin>
             <Insets top="10.0" />
