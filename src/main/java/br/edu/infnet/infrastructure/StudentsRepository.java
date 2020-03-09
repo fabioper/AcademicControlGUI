@@ -1,6 +1,6 @@
 package br.edu.infnet.infrastructure;
 
-import br.edu.infnet.data.ConnectionFactory;
+import br.edu.infnet.data.MySqlConnectionFactory;
 import br.edu.infnet.domain.entities.Student;
 import br.edu.infnet.domain.interfaces.Repository;
 
@@ -26,7 +26,7 @@ public class StudentsRepository implements Repository<Student> {
 
     @Override
     public Collection<Student> getAll() {
-        try (var conn = ConnectionFactory.connect()) {
+        try (var conn = MySqlConnectionFactory.connect()) {
             var queryStatement = "SELECT name, firstGrade, secondGrade FROM students";
             try (var query = conn.prepareStatement(queryStatement)) {
                 parseStudents(query);
@@ -57,7 +57,7 @@ public class StudentsRepository implements Repository<Student> {
 
     @Override
     public void add(Student student) {
-        try (var conn = ConnectionFactory.connect()) {
+        try (var conn = MySqlConnectionFactory.connect()) {
             var sql = "INSERT INTO students (name, firstGrade, secondGrade) VALUES (?, ?, ?)";
             try (var statement = conn.prepareStatement(sql)) {
                 statement.setString(1, student.getName());
@@ -73,7 +73,7 @@ public class StudentsRepository implements Repository<Student> {
     @Override
     public int getSize() {
         var result = 0;
-        try (var conn = ConnectionFactory.connect()) {
+        try (var conn = MySqlConnectionFactory.connect()) {
             try (var statement = conn.prepareStatement("SELECT COUNT(name) FROM students")) {
                 var queryResult = statement.executeQuery();
                 result = queryResult.getInt("id");

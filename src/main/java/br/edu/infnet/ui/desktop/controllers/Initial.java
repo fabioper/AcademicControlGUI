@@ -4,6 +4,7 @@ import br.edu.infnet.domain.entities.Student;
 import br.edu.infnet.domain.interfaces.Repository;
 import br.edu.infnet.infrastructure.StudentsRepository;
 import br.edu.infnet.infrastructure.StudentsRepositoryInMemory;
+import br.edu.infnet.ui.desktop.components.Modal;
 import br.edu.infnet.ui.desktop.models.StudentViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,12 +53,8 @@ public class Initial implements Initializable {
 
     @FXML
     void openRegisterStudentScene(ActionEvent event) throws IOException {
-        var stage = new Stage();
-        stage.setTitle("Registar estudante");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        Parent root = FXMLLoader.load(getClass().getResource("/views/RegisterStudent.fxml"));
-        var scene = new Scene(root, 320, 290);
-        stage.setScene(scene);
+        var modal = new Modal("Registrar estudante");
+        var stage = modal.open(getClass().getResource("/views/RegisterStudent.fxml"));
         stage.showAndWait();
         studentsTable.setItems(getStudentViewModels());
     }
