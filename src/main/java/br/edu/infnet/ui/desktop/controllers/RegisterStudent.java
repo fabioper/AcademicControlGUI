@@ -3,7 +3,7 @@ package br.edu.infnet.ui.desktop.controllers;
 import br.edu.infnet.domain.entities.Student;
 import br.edu.infnet.domain.interfaces.Repository;
 import br.edu.infnet.infrastructure.StudentsRepository;
-import javafx.event.ActionEvent;
+import br.edu.infnet.infrastructure.StudentsRepositoryInMemory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

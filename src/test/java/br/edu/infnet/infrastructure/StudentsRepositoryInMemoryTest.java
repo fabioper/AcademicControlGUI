@@ -5,16 +5,14 @@ import br.edu.infnet.domain.interfaces.Repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class StudentsRepositoryTest {
+class StudentsRepositoryInMemoryTest {
     private static Repository<Student> repository;
 
     @BeforeEach
     void setUp() {
-        repository = StudentsRepository.getInstance();
+        repository = StudentsRepositoryInMemory.getInstance();
         repository.clear();
     }
 
