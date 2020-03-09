@@ -1,11 +1,11 @@
-/*
-.button.primary {
-    -fx-background-color: #424874;
-    -fx-text-fill: #ffffff;
-    -fx-border-width: 0em;
-    -fx-padding: 0.8em 1.5em;
-}
+/*.button {*/
+/*    -fx-background-color: #f8615a;*/
+/*    -fx-text-fill: #fff;*/
+/*    -fx-font-family: sans-serif;*/
+/*    -fx-padding: 1em 2em;*/
+/*}*/
 
-.footer {
-    -fx-background-color: #eee;
-}*/
+.label.error-message {
+    -fx-text-fill: #ff0000;
+    -fx-font-weight: bold;
+}
