@@ -13,7 +13,7 @@ public interface Repository<T extends Entity> {
 
     int getSize();
 
-    void addAll(T... entities);
+    void addAll(T[] entities);
 
     void clear();
 }

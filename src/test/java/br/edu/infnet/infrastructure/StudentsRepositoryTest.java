@@ -33,10 +33,6 @@ class StudentsRepositoryTest {
 
     private void addStudents() {
         repository.addAll(
-            new Student("Student", 5.7, 7.1),
-            new Student("Student2", 9, 8.1),
-            new Student("Student3", 7.5, 10),
-            new Student("Student", 2.2, 9.7)
-        );
+                new T[]{new Student("Student", 5.7, 7.1), new Student("Student2", 9, 8.1), new Student("Student3", 7.5, 10), new Student("Student", 2.2, 9.7)});
     }
 }
