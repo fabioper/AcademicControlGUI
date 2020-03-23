@@ -7,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainApplication extends Application {
-    private final int initialWidth = 960;
-    private final int initialHeight = 450;
+    private final int initialWidth = 500;
+    private final int initialHeight = 350;
 
     public static void main(String[] args) { launch(args); }
 
